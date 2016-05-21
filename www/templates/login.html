@@ -1,0 +1,16 @@
+<ion-view hide-nav-bar="true" ng-controller="LoginController as logcntrl" class="green-bg">
+  <ion-content>
+  
+      <div class="col  text-center">
+          <img class="init-logo" alt="roomies" src="lib/ionic/fonts/logo.svg">
+      </div>
+      <div class="col  text-center"><label class="welcome">Welcome. It's {{logcntrl.day}}!</label></div>
+	  <div class="list list-inset top180">
+	  	
+        <label class="item item-input green-bg" >
+	    	<input type="text" class="" placeholder="nickname?" ng-model="logcntrl.nickname">
+	  	</label>
+	  	<button class="button button-block" ng-click="logcntrl.join()">Log in</button>
+	  </div>
+  </ion-content>
+</ion-view>
