@@ -1,5 +1,4 @@
 var chat=app.controller('ChatController',function($stateParams,socket,$sanitize,$ionicScrollDelegate,$timeout) {
-  	console.log("we are here!!");
   	var self=this;
   	var typing = false;
   	var lastTypingTime;

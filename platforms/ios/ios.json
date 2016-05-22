@@ -27,6 +27,9 @@
         },
         "cordova-plugin-inappbrowser": {
             "PACKAGE_NAME": "com.ionicframework.cangacoui959623"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.ionicframework.cangacoui959623"
         }
     },
     "dependent_plugins": {},
@@ -52,6 +55,7 @@
     ],
     "plugin_metadata": {
         "ionic-plugin-keyboard": "2.2.0",
-        "cordova-plugin-inappbrowser": "1.4.1-dev"
+        "cordova-plugin-inappbrowser": "1.4.1-dev",
+        "cordova-plugin-whitelist": "1.2.3-dev"
     }
 }
