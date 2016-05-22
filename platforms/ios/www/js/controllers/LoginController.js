@@ -18,32 +18,18 @@ app.controller('LoginController',function($state, $sanitize, $cordovaOauth, $htt
     
     //        self.getDay();
     self.fbLogin = function(){
-        Auth.$authWithOAuthRedirect('facebook').then(
-        function(authData){
-            console.log(authData);
-        }).catch(function(error) {
-          if (error.code === "TRANSPORT_UNAVAILABLE") {
-            Auth.$authWithOAuthPopup("facebook").then(function(authData) {
-              // User successfully logged in. We can log to the console
-              // since we’re using a popup here
-                console.log(authData);
-            });
-
-          } else {
-            // Another error occurred
-            console.log(error);
-          }
+        authLogin("facebook", function(jsondata){
+//            self.data.id = jsondata.twitter.id;
+//            self.data.name = jsondata.twitter.displayName;
+//            self.data.img = jsondata.twitter.profileImageURL;
         });
-    }
+    };
     
     self.twLogin = function(){
         authLogin("twitter", function(jsondata){
             self.data.id = jsondata.twitter.id;
             self.data.name = jsondata.twitter.displayName;
             self.data.img = jsondata.twitter.profileImageURL;
-            //TODO change this part
-            self.nickname = self.data.name;
-            self.join();
         });
     };
     
@@ -52,10 +38,6 @@ app.controller('LoginController',function($state, $sanitize, $cordovaOauth, $htt
             self.data.id = jsondata.google.id;
             self.data.name = jsondata.google.displayName;
             self.data.img = jsondata.google.profileImageURL;
-            //TODO change this part
-            self.nickname = self.data.name;
-            self.join();
- 
         });
     };
     
@@ -70,6 +52,9 @@ app.controller('LoginController',function($state, $sanitize, $cordovaOauth, $htt
                 var jsondata = JSON.stringify(authData);
                 jsondata = JSON.parse(jsondata);
                 callback(jsondata);
+                console.log(self.data.name);
+                self.nickname = self.data.name;
+                self.join();
             });
           } else {
             // Another error occurred

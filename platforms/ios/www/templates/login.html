@@ -4,8 +4,8 @@
       <div class="col  text-center">
           <img class="init-logo" alt="roomies" src="lib/ionic/fonts/logo.svg">
       </div>
-      <div class="col  text-center"><label class="welcome">Welcome. It's {{logcntrl.day}}!</label></div>
-	  <div class="list list-inset top180">
+      <div class="col  text-center top20"><label class="welcome">Welcome. It's {{logcntrl.day}}!</label></div>
+<!--	  <div class="list list-inset top180">-->
 	  	
 <!--
         <label class="item item-input green-bg" >
@@ -13,11 +13,12 @@
 	  	</label>
 	  	<button class="button button-block" ng-click="logcntrl.join()">Log in</button>
 -->
-	  	
-	  	
-	  	<button class="button button-outline button-block button-positive" ng-click="logcntrl.twLogin()">Log in with Twitter</button>
-	  	<button class="button button-block button-outline button-positive" ng-click="logcntrl.gLogin()">Log in with Google</button>
-	  	<button class="button button-block button-outline button-calm" ng-click="logcntrl.fbLogin()">Log in with Facebook</button>
-	  </div>
+<!--	  	</div>-->
+    <center class="top120">
+        <button class="button button-block button-balanced" ng-click="logcntrl.fbLogin()">Log in with Facebook</button>
+        <button class="button button-block button-calm" ng-click="logcntrl.twLogin()">Log in with Twitter</button>
+        <button class="button button-block button-royal" ng-click="logcntrl.gLogin()">Log in with Google</button>
+    </center>
+	  
   </ion-content>
 </ion-view>
