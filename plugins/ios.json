@@ -1,0 +1,18 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.ionicframework.cangacoui959623"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.ionicframework.cangacoui959623"
+        }
+    },
+    "dependent_plugins": {}
+}
