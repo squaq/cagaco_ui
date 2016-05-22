@@ -7,13 +7,17 @@
       <div class="col  text-center"><label class="welcome">Welcome. It's {{logcntrl.day}}!</label></div>
 	  <div class="list list-inset top180">
 	  	
+<!--
         <label class="item item-input green-bg" >
 	    	<input type="text" class="" placeholder="nickname?" ng-model="logcntrl.nickname">
 	  	</label>
 	  	<button class="button button-block" ng-click="logcntrl.join()">Log in</button>
+-->
 	  	
-	  	<button class="button button-block" ng-click="logcntrl.fbLogin()">Log in with Facebook</button>
-	  	<button class="button button-block" ng-click="logcntrl.twLogin()">Log in with Twitter</button>
+	  	
+	  	<button class="button button-outline button-block button-positive" ng-click="logcntrl.twLogin()">Log in with Twitter</button>
+	  	<button class="button button-block button-outline button-positive" ng-click="logcntrl.gLogin()">Log in with Google</button>
+	  	<button class="button button-block button-outline button-calm" ng-click="logcntrl.fbLogin()">Log in with Facebook</button>
 	  </div>
   </ion-content>
 </ion-view>

@@ -1,4 +1,4 @@
-var app=angular.module('cangaco-chat-client', ['ionic','btford.socket-io', 'ngCordovaOauth'])
+var app=angular.module('cangaco-chat-client', ['ionic','btford.socket-io', 'ngCordovaOauth', 'firebase'])
 .run(function($ionicPlatform) {
       $ionicPlatform.ready(function() {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard

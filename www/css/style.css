@@ -1,4 +1,5 @@
 /*Custom Color*/
+/*
 .button.button-grey {
     border-color: #585858;
     background-color: #585858;
@@ -26,12 +27,19 @@
         background-color: #585858;
         box-shadow: none;
         color: #fff; }
+*/
 
 /*End*/
-
+button.button-block{
+    color: #fff;
+    font-size: 16px; 
+    font-family: sans-serif;
+    border-radius: 25px;
+    width: 80%;
+}
 
 .green-bg{
-    background-color: #92C629;
+    background-color: #92C629 !important;
 }
 
 .light{
@@ -45,8 +53,11 @@
 	border-bottom: 1px solid #8DB4B4;
 }
 
-.top180{
-	margin-top: 180px;
+.top120{
+	margin-top: 120px;
+}
+.top20{
+	margin-top: 20px;
 }
 
 input.white{
@@ -65,11 +76,15 @@ input.white{
 	border:0px;
 }
 .init-logo{
-    width: 17em; text-align: center;
-    margin-top: 30px;
+    width: 23em; text-align: center;
+    margin-top: 70px;
 }
 
-.welcome{color: #fff;font-size: 22px; font-family: sans-serif}
+.welcome{
+    color: #fff;
+    font-size: 22px; 
+    font-family: sans-serif;
+}
 
 .line-light-grey{
 	background-color: #EDEBEE;
