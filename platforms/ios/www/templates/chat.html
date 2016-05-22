@@ -1,21 +1,15 @@
 <ion-view ng-controller="ChatController as chatCtrl" class="light-grey">
- 	
-    <ion-nav-back-button>
-    </ion-nav-back-button>
      <ion-nav-title>
         <img class="logo-bar" alt="roomies" height="24" src="lib/ionic/fonts/logo.svg">
     </ion-nav-title>
+    <ion-header-bar class="bar bar-subheader">
+          <h1 class="titleRoom">#{{chatCtrl.roomName}}</h1>
+        </ion-header-bar>
      
-     <ion-nav-bar class="bar-positive">
-      <ion-nav-buttons side="right">
-        <button class="button button-clear icon ion-android-more-vertical right8" ng-click="chatCtrl.openPopover($event)">
-        </button>
-      </ion-nav-buttons>
- 	</ion-nav-bar>
  	<ion-content has-bouncing="true" class="content">
 	  <div ng-show="chatCtrl.connected">
-	 	<div class="log pad2">"Welcome to Socket.IO Chat – ";</div>
-	 	<div class="log">{{chatCtrl.number_message}}</div>
+	 	<div class="log pad2"></div>
+<!--	 	<div class="log">{{chatCtrl.number_message}}</div>-->
 	  </div>
 	  <div>
         <ul>
@@ -31,7 +25,7 @@
 		    <input class="line-light-grey" ng-change="chatCtrl.updateTyping()" type="text"  placeholder="Message" ng-enter="chatCtrl.sendMessage()" ng-model="chatCtrl.message"> 
 		  </label>
 		  <div class="divsend">
-			    <button class="button button-clear ion-android-send iconsend" ng-click="chatCtrl.sendMessage()"></button>
+			    <button class="button button-clear ion-chevron-right iconsend" ng-click="chatCtrl.sendMessage()"></button>
 		  </div>
 		</div>
 	</div> 	

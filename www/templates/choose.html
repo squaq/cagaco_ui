@@ -1,0 +1,15 @@
+<ion-view ng-controller="ChooseController as chootCtrl" class="light-grey">
+     <ion-nav-title>
+        <img class="logo-bar" alt="roomies" height="24" src="lib/ionic/fonts/logo.svg">
+    </ion-nav-title>
+ 	<ion-content has-bouncing="true" class="content">
+	  <ion-list>
+          <ion-item ng-repeat="sala in chootCtrl.salas">
+            <a ng-click="chootCtrl.gotoChat(sala.name)">
+                <span class="roomName">#{{sala.name}}</span>
+                <span class="right onRoom"><b>{{sala.on}}</b></span>
+            </a>
+          </ion-item>
+        </ion-list>
+	</ion-content>
+</ion-view>

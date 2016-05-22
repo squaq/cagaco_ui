@@ -3,10 +3,10 @@ app.factory("Auth", function($firebaseAuth) {
   return $firebaseAuth(usersRef);
 });
 
-app.controller('LoginController',function($state, $sanitize, $cordovaOauth, $http, $firebaseAuth, Auth) {
+app.controller('LoginController',function($rootScope, $state, $sanitize, $cordovaOauth, $http, $firebaseAuth, Auth) {
     var self=this;
     
-    self.data = {};
+    $rootScope.data = {};
     self.getDay = function(){
         var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
         var d = new Date();
@@ -19,25 +19,27 @@ app.controller('LoginController',function($state, $sanitize, $cordovaOauth, $htt
     //        self.getDay();
     self.fbLogin = function(){
         authLogin("facebook", function(jsondata){
-//            self.data.id = jsondata.twitter.id;
-//            self.data.name = jsondata.twitter.displayName;
-//            self.data.img = jsondata.twitter.profileImageURL;
+//            $rootScope.data.id = jsondata.twitter.id;
+//            $rootScope.data.name = jsondata.twitter.displayName;
+//            $rootScope.data.img = jsondata.twitter.profileImageURL;
         });
     };
     
     self.twLogin = function(){
         authLogin("twitter", function(jsondata){
-            self.data.id = jsondata.twitter.id;
-            self.data.name = jsondata.twitter.displayName;
-            self.data.img = jsondata.twitter.profileImageURL;
+            $rootScope.data.id = jsondata.twitter.id;
+            $rootScope.data.name = jsondata.twitter.displayName;
+            $rootScope.data.img = jsondata.twitter.profileImageURL;
+//            $state.go('choose',{});
         });
     };
     
     self.gLogin = function(){
         authLogin("google", function(jsondata){
-            self.data.id = jsondata.google.id;
-            self.data.name = jsondata.google.displayName;
-            self.data.img = jsondata.google.profileImageURL;
+            $rootScope.data.id = jsondata.google.id;
+            $rootScope.data.name = jsondata.google.displayName;
+            $rootScope.data.img = jsondata.google.profileImageURL;
+//            $state.go('choose',{});
         });
     };
     
@@ -52,9 +54,12 @@ app.controller('LoginController',function($state, $sanitize, $cordovaOauth, $htt
                 var jsondata = JSON.stringify(authData);
                 jsondata = JSON.parse(jsondata);
                 callback(jsondata);
-                console.log(self.data.name);
-                self.nickname = self.data.name;
-                self.join();
+                console.log($rootScope.data.name);
+                self.nickname = $rootScope.data.name;
+                $state.go('choose',{});
+//                $location.path("/choose")
+                
+//                self.join();
             });
           } else {
             // Another error occurred

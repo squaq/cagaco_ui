@@ -1,9 +1,9 @@
-var chat=app.controller('ChatController',function($stateParams,socket,$sanitize,$ionicScrollDelegate,$timeout) {
+var chat=app.controller('ChatController',function($stateParams,socket,$sanitize,$ionicScrollDelegate,$timeout, $rootScope) {
   	var self=this;
   	var typing = false;
   	var lastTypingTime;
   	var TYPING_TIMER_LENGTH = 400;
-  	
+  	self.roomName = $rootScope.roomName;
   	//Add colors
   	var COLORS = [
 	    '#e21400', '#91580f', '#f8a700', '#f78b00',
@@ -12,7 +12,7 @@ var chat=app.controller('ChatController',function($stateParams,socket,$sanitize,
 	  ];
 
 	 //initializing messages array
-	self.messages=[]
+	self.messages=[];
 
   	socket.on('connect',function(){
   	  

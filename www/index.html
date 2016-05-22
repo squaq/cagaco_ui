@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="cangaco-chat-client">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
@@ -28,10 +28,15 @@
 
     <!-- your app's js -->
     <script src="js/app.js"></script>
-
+    
+<!--    maps -->
+<!--    <script src="http://maps.google.com/maps/api/js?key=AIzaSyANqfegg5LnuglrMFN82j0utXXhIOv9VfQ&sensor=true"></script>-->
+    
     <!-- your controllers' js -->
     <script src="js/controllers/ChatController.js"></script>
     <script src="js/controllers/LoginController.js"></script>
+    <script src="js/controllers/ChooseController.js"></script>
+    <script src="js/controllers/ChatMapController.js"></script>
     
     <!--your services' js -->
     <script src="js/services/socket.js"></script>
@@ -45,11 +50,16 @@
     <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
     
   </head>
-  <body ng-app="cangaco-chat-client">
-    <ion-nav-bar animation="nav-title-slide-ios7" 
-             type="bar-positive" 
-             back-button-type="button-icon" 
-             back-button-icon="ion-arrow-left-c"></ion-nav-bar>
+  <body>
+<!--
+    <ion-nav-title>
+        <img class="logo-bar" alt="roomies" height="24" src="lib/ionic/fonts/logo.svg">
+    </ion-nav-title>
+-->
+    <ion-nav-bar class="bar-positive">
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+        
     <ion-nav-view></ion-nav-view>
   </body>
 </html>
